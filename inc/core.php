@@ -58,7 +58,7 @@ function callHook()
     else
     {
             //$url = routeURL($url);
-            $urlArray = explode("/",$url);
+            $urlArray = explode("/",ltrim($url, "/"));
             $controller = $urlArray[0];
             array_shift($urlArray);
             $params = $urlArray;
