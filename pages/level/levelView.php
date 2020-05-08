@@ -7,6 +7,12 @@ class LevelView
 		$html = new HTML;
 		foreach($_SESSION['stats'] as $level=>$data)
 		{
+		    if ($data['avgtime'] == 'Not enough data') {
+                $rows[] = "['Level $level',$data[solved],'#62c462']";
+                $time[] = "['Level $level',0,'#62c462']";
+		        continue;
+            }
+
 			$rows[] = '[\'Level '.$level.'\','.$data['solved'].',\'#62c462\']';
 			$time[] = '[\'Level '.$level.'\','.ceil(($data['avgtime']/60)).',\'#62c462\']';
 		}
