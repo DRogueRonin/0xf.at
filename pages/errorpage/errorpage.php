@@ -4,7 +4,7 @@
  * Error handler
  */
 
-class Error extends Page
+class ErrorPage extends Page
 {
     function setMenu()
     {

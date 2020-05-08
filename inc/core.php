@@ -74,7 +74,7 @@ function callHook()
 
     if(!file_exists(ROOT . DS . 'pages' . DS . $controller . DS . $controller . '.php'))
     {
-            $controller = 'error';
+            $controller = 'errorPage';
             $action = 'notfound';
             $queryString = array('error'=>$url);
     }
@@ -86,9 +86,9 @@ function callHook()
 
     if(!$dispatch->maySeeThisPage()) 
     {
-        $controllerName = 'error';
+        $controllerName = 'errorPage';
         $action = 'notallowed';
-        $dispatch = new $controllerName('error',$action,true);
+        $dispatch = new $controllerName('errorPage',$action,true);
     }
     else
         $dispatch = new $controllerName($controller,$action,true,$queryString);
